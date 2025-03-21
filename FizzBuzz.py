@@ -11,3 +11,5 @@ def fizzbuzz():
         if print_number:
             print(i)
         print()
+
+fizzbuzz()
