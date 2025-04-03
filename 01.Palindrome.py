@@ -7,6 +7,7 @@ def Palindrome_me(P: str) -> bool:  # 자료형 선언
             return False
     return True
 
+# 리스트로 변환 304밀리초
 def Palindrome_1(s: str) -> bool:
     strs = []
     for char in s:
@@ -20,6 +21,7 @@ def Palindrome_1(s: str) -> bool:
 
     return True
 
+# 데큐를 활용한 최적화 64밀리초
 from collections import deque
 from typing import Deque
 def Palindrome_2(s: str) -> bool:
@@ -37,6 +39,7 @@ def Palindrome_2(s: str) -> bool:
 
     return True
 
+# 슬라이싱 이용 36밀리초
 # 제일 내가 쓴 답과 유사함
 def Palindrome_3(s: str) -> bool:
     s = s.lower()

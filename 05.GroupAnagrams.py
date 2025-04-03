@@ -27,3 +27,9 @@ def groupAnagrams(strs: List[str]) -> List[List[str]]:
 문자열 배열이 주어지면 똑같은 알파벳을 가진 문자열끼리 그룹화한다.
 출력 순서는 상관없다.
 '''
+'''
+< 정렬 알고리즘 별 시간 복잡도 >
+퀵정렬      nlogn   nlogn   n^2
+병합정렬    nlogn   nlogn   nlogn
+팀소트      n       nlogn   nlogn   (실제 데이터는 이미 정렬되어 있을 것이다를 가정하고 최적화)
+'''

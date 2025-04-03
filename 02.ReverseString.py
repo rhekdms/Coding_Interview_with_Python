@@ -3,6 +3,7 @@ def reverseString_me(s: list) -> None:
 
 reverseString_me(list(input()))
 
+# 투포인터를 이용한 스왑 216밀리초
 def reverseString_1(s: list) -> None:
         left, right = 0, len(s) - 1
         while left < right:         # 하나하나 바꾸는 방식
@@ -10,6 +11,7 @@ def reverseString_1(s: list) -> None:
             left += 1
             right -= 1
 
+# 파이썬 기본함수를 활용한 파이썬다운 방식 208밀리초
 def reverseString_2(s: list) -> None:    # 내가 한 방식이랑 같음
     s.reverse()
 
