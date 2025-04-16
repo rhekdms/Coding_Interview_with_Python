@@ -1,21 +1,20 @@
 from re import sub
-def mostCommonWord_me(paragraph:str, banned:list)->str:
-    paragraph = sub("[^a-z]"," ",paragraph.lower())
+def mostCommonWord_me(paragraph:str, banned:list)->str:     # 4ms
+    paragraph = sub("[^a-z]", " ", paragraph.lower())
     cnt = {}
-    for i in list(paragraph.split()):
-        if i in cnt:cnt[i]+=1
-        else: cnt[i]=1
-    for i in banned:
-        del cnt[i]
-    
-    return max(cnt.items(),key=lambda i: i[1])[0]
+    for word in paragraph.split():
+        cnt[word] = cnt.get(word, 0) + 1
+    for word in banned:
+        if word in cnt:
+            del cnt[word]
+    return max(cnt.items(), key=lambda x: x[1])[0]
     
 print(mostCommonWord_me(paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.", banned = ["hit"]))
 
 
 import collections
 import re
-from typing import List
+from typing import List     # 3ms
 def mostCommonWord_1(paragraph: str, banned: List[str]) -> str:
     words = [word for word in re.sub(r'[^\w]', ' ', paragraph)
         .lower().split()

@@ -1,5 +1,5 @@
 from re import sub
-def Palindrome_me(P: str) -> bool:  # 자료형 선언
+def Palindrome_me(P: str) -> bool:  # 자료형 선언 8밀리초
     P = P.lower()
     P = sub("[^a-z0-9]","",P)   # 정규식 사용
     for i in range(len(P)//2):          # 하나하나 비교
