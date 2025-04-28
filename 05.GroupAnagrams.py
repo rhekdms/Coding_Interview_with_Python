@@ -29,7 +29,7 @@ def groupAnagrams(strs: List[str]) -> List[List[str]]:
 print(groupAnagrams_me(strs = ["eat","tea","tan","ate","nat","bat"]))
 
 
-def groupAnagrams(strs: List[str]) -> List[List[str]]:
+def groupAnagrams_1(strs: List[str]) -> List[List[str]]:
     anagrams = collections.defaultdict(list)
     # defaultdict -> 기본 형태를 설정할 수 있는 딕셔너리
     # 이런 방법은 생각도 못했네... 7ms
@@ -37,6 +37,21 @@ def groupAnagrams(strs: List[str]) -> List[List[str]]:
         # 정렬하여 딕셔너리에 추가
         anagrams[''.join(sorted(word))].append(word)
     return list(anagrams.values())
+
+def groupAnagrams_ktr(strs: List[str]) -> List[List[str]]:
+    l = dict()      # 17ms
+
+    for elm in sorted(strs):
+        item = f"{sorted(list(elm))}"
+        if l.get(item):l[item].append(elm)
+        else:l[item] = [elm]
+
+    result = []
+    for value in l.values():
+        result.append(value)
+
+    if result:return result
+    else: return [[""]]
 
 '''
 # 그룹 아나그램
